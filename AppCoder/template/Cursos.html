@@ -1,6 +1,34 @@
 {% extends "home.html"%}
 {% load static%}
 
-{% block contenido%}
-    <p>Hola cursos!</p> 
-{% endblock%}
+{%block contenido%}
+    <link rel="stylesheet" href="{%static 'css/miestilo.css'%}">
+    <h1>Bienvenido a la página de cursos!</h1> 
+    <body>
+        <p>Por favor ingrese los datos del curso que desea cargar:</p>
+    </body>
+    <div class="contenidoCursos">
+        <form class="formDataCursos" action="/AppCoder/cursos/" method="POST"> {% csrf_token %}
+           <input type = "text" name="nombre" placeholder="Nombre"> 
+           <input type="text" name="comision" placeholder="Comision">
+           <button type="submit" class="btn btn-primary btndj">Registrar</button>
+        </form>
+    </div>
+
+    <div>
+        <form class="formDataCursos" action="/AppCoder/buscar_cursos/" method="GET"> 
+            <input type="text" name="comision" placeholder="Comision">
+            <button type="submit" class="btn btn-primary btndj">Buscar</button>
+         </form>
+    </div>
+    <div>
+        {% if cursos %}
+        <ul>
+            {%for curso in cursos%}
+            <li>{{curso.nombre}}</li>
+            <li>{{curso.comision}}</li>
+            {%endfor%}
+        </ul>
+        {% endif %}
+    </div>
+{%endblock%}

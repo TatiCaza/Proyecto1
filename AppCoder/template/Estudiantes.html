@@ -3,7 +3,10 @@
 
 {%block contenido%}
     <link rel="stylesheet" href="{%static 'css/miestilo.css'%}">
-    <p>Hola estudiantes!</p> 
+    <h1>Bienvenido a la página de estudiantes!</h1> 
+    <body>
+        <p>Por favor ingrese los datos del estudiante a cargar:</p>
+    </body>
     <div class="contenidoEstudiantes">
         <form class="formDataEstudiantes" action="/AppCoder/estudiantes/" method="POST"> {% csrf_token %}
            <input type = "text" name="nombre" placeholder="Nombre"> 

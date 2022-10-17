@@ -4,16 +4,30 @@
 }
 
 .contenidoEstudiantes{
-    background-color: #030354;
+    background-color: #dfdedec8;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 .formDataEstudiantes{
     display: flex;
     flex-direction: column;
     width: 500px;
-    gap: 10px;
+    gap: 50px;
+}
+.contenidoCursos{
+    background-color: #dfdedec8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.formDataCursos{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 50px;
 }
